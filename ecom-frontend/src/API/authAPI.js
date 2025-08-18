@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const authAPI = axios.create({
-  baseURL: "http://localhost:8080", 
+  baseURL: "https://ecom-fullstack-rx3f.onrender.com",
+  // baseURL: "http://localhost:8080", 
 });
 
 // Remove default token if any

@@ -22,12 +22,12 @@ const UpdateProduct = ({ theme }) => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/${id}`
+          `https://ecom-fullstack-rx3f.onrender.com/api/product/${id}`
         );
         setProduct(response.data);
 
         const responseImage = await axios.get(
-          `http://localhost:8080/api/product/${id}/image`,
+          `https://ecom-fullstack-rx3f.onrender.com/api/product/${id}/image`,
           { responseType: "blob" }
         );
         const imageFile = await converUrlToFile(responseImage.data, response.data.imageName);
@@ -63,7 +63,7 @@ const UpdateProduct = ({ theme }) => {
     );
 
     try {
-      await axios.put(`http://localhost:8080/api/product/${id}`, updatedProduct, {
+      await axios.put(`https://ecom-fullstack-rx3f.onrender.com/api/product/${id}`, updatedProduct, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Product updated successfully!");

@@ -57,7 +57,7 @@ const AddProduct = () => {
         new Blob([JSON.stringify(product)], { type: "application/json" })
       );
 
-      const response = await axios.post("http://localhost:8080/api/product", formData, {
+      const response = await axios.post("https://ecom-fullstack-rx3f.onrender.com/api/product", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

@@ -14,7 +14,7 @@ const Cart = () => {
   useEffect(() => {
   const fetchImagesAndUpdateCart = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/products");
+      const response = await axios.get("https://ecom-fullstack-rx3f.onrender.com/api/products");
       const backendProductIds = response.data.map((product) => product.id);
 
       const updatedCartItems = cart.filter((item) =>
@@ -25,7 +25,7 @@ const Cart = () => {
         updatedCartItems.map(async (item) => {
           try {
             const res = await axios.get(
-              `http://localhost:8080/api/product/${item.id}/image`,
+              `https://ecom-fullstack-rx3f.onrender.com/api/product/${item.id}/image`,
               { responseType: "blob" }
             );
             const imageFile = new File([res.data], `${item.name}.png`, {
@@ -92,7 +92,7 @@ const handleCheckout = async () => {
         new Blob([JSON.stringify(updatedProductData)], { type: "application/json" })
       );
 
-      await axios.put(`http://localhost:8080/api/product/${item.id}`, cartProduct, {
+      await axios.put(`https://ecom-fullstack-rx3f.onrender.com/api/product/${item.id}`, cartProduct, {
         headers: { "Content-Type": "multipart/form-data" },
       });
     }
