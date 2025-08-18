@@ -1,0 +1,16 @@
+# Node / React
+ecom-frontend/node_modules
+ecom-frontend/build
+ecom-frontend/.env
+
+# Spring Boot / Java
+ecom-backend/target
+ecom-backend/.idea
+ecom-backend/.classpath
+ecom-backend/.project
+ecom-backend/.settings
+ecom-backend/*.iml
+ecom-backend/.mvn/wrapper/maven-wrapper.jar
+
+# OS
+.DS_Store
